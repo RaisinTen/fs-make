@@ -62,7 +62,7 @@ Install all the requirements with:
 ```sh
 $ make install
 ```
-Build the executable from source and add it to `usr/local/bin/` with:
+Build the executable from source and add its symbolic link to `usr/local/bin/` with:
 ```sh
 $ make all
 ```
@@ -70,3 +70,15 @@ or just:
 ```sh
 $ make
 ```
+
+## Usage
+
+1. Create a file describing the project structure.
+2. Use `fs-make` to generate the shell script to make the file system like this:
+    ```sh
+    fs-make description.json script.sh
+    ```
+3. Run the script:
+    ```sh
+    bash ./script.sh
+    ```
