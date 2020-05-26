@@ -29,7 +29,7 @@ OBJECTS := \
 
 DEPS := $(OBJECTS:.o=.d)
 
-.PHONY := all clean
+.PHONY := all clean install
 
 # colours
 
@@ -61,6 +61,16 @@ RMFLAGS := -f
 all: $(TARGET)
 	@echo "$(GREEN)Build complete!$(NC)"
 	sudo ln -sf $(shell pwd)/$(TARGET) $(BIN)/$(TARGET)
+
+install:
+	@echo "$(BLUE)Installing build-essential$(NC)"
+	sudo apt-get install build-essential
+	@echo "$(BLUE)Installing bison$(NC)"
+	sudo apt-get install bison
+	@echo "$(BLUE)Installing flex$(NC)"
+	sudo apt-get install flex
+	@echo "$(BLUE)Installing tree$(NC)"
+	sudo apt-get install tree
 
 $(TARGET): $(OBJECTS)
 	@echo "$(YELLOW)Making $@$(NC)"

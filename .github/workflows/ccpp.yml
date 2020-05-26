@@ -16,9 +16,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install
-      run: sudo apt install flex bison tree
+      run: make install
     - name: Build
-      run: make
+      run: make all
     - name: Running on sample.json
       run: |
         cd ./tests
