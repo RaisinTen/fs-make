@@ -1,0 +1,29 @@
+{
+    "README.md",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    "CODE_OF_CONDUCT.md",
+    ".gitignore",
+    "package.json",
+    "package-lock.json",
+    "build.gyp",
+    "x": "y",
+    "node_modules": {
+        "x"
+    },
+    "lib": {
+        "index.js"
+    },
+    "src": {
+        "prog.cc",
+        "includes": {
+        }
+    },
+    "build": {
+        "Makefile",
+        "Releases": {
+            "prog.node"
+        }
+    },
+    "z": "a"
+}
