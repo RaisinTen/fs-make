@@ -6,7 +6,7 @@ DEFINES := -D TARGET=\"$(TARGET)\" -D VERSION=\"$(VERSION)\"
 
 # files
 
-BIN := ~/bin
+BIN := /usr/local/bin
 
 YFILES := $(wildcard *.y)
 
@@ -60,8 +60,7 @@ RMFLAGS := -f
 
 all: $(TARGET)
 	@echo "$(GREEN)Build complete!$(NC)"
-	mkdir -p $(BIN)
-	ln -sf $(shell pwd)/$(TARGET) $(BIN)/$(TARGET)
+	sudo ln -sf $(shell pwd)/$(TARGET) $(BIN)/$(TARGET)
 
 $(TARGET): $(OBJECTS)
 	@echo "$(YELLOW)Making $@$(NC)"
@@ -85,7 +84,7 @@ grammar.tab.c grammar.tab.h: grammar.y
 
 clean:
 	@echo "$(RED)Cleaning$(NC)"
-	$(RM) $(RMFLAGS) $(OBJECTS) $(DEPS) $(YYFILES) $(TABFILES) $(TARGET) ~/bin/$(TARGET)
+	sudo $(RM) $(RMFLAGS) $(OBJECTS) $(DEPS) $(YYFILES) $(TABFILES) $(TARGET) $(BIN)/$(TARGET)
 
 # from generated dependency files
 
