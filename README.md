@@ -82,3 +82,7 @@ $ make
     ```sh
     bash ./script.sh
     ```
+
+Here's an example:
+
+![example](https://github.com/RaisinTen/fs-make/raw/master/fs-make-demo.png)
