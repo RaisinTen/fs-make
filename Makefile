@@ -1,6 +1,6 @@
 # macros
 
-TARGET		:= fsmake
+TARGET		:= fs-make
 VERSION		:= 1.0.0
 DEFINES		:= -D TARGET=\"$(TARGET)\" -D VERSION=\"$(VERSION)\"
 

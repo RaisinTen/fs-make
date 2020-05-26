@@ -22,7 +22,7 @@ jobs:
     - name: Running on sample.json
       run: |
         cd ./tests
-        ../fsmake sample.json out-sample.sh
+        ../fs-make sample.json out-sample.sh
         mkdir root
         cd root
         bash ../out-sample.sh
