@@ -1,58 +1,58 @@
 # macros
 
-TARGET		:= fs-make
-VERSION		:= 1.0.0
-DEFINES		:= -D TARGET=\"$(TARGET)\" -D VERSION=\"$(VERSION)\"
+TARGET := fs-make
+VERSION := 1.0.0
+DEFINES := -D TARGET=\"$(TARGET)\" -D VERSION=\"$(VERSION)\"
 
 # files
 
-YFILES		:= $(wildcard *.y)
+YFILES := $(wildcard *.y)
 
-TABFILES	:= \
+TABFILES := \
 	$(YFILES:.y=.tab.c) \
 	$(YFILES:.y=.tab.h)
 
-YYFILES		:= lex.yy.c
+YYFILES := lex.yy.c
 
-CFILES		:= \
+CFILES := \
 	$(wildcard *.c) \
 	$(YFILES:.y=.tab.c) \
 	$(YYFILES)
 
-CPPFILES	:= $(wildcard *.cpp)
+CPPFILES := $(wildcard *.cpp)
 
-OBJECTS		:= \
+OBJECTS := \
 	$(CFILES:.c=.o) \
 	$(CPPFILES:.cpp=.o)
 
-DEPS		:= $(OBJECTS:.o=.d)
+DEPS := $(OBJECTS:.o=.d)
 
-.PHONY		:= all clean
+.PHONY := all clean
 
 # colours
 
-PRE			:= \033[
+PRE := \033[
 
-NC			:= $(PRE)0m
-GREEN		:= $(PRE)1;32m
-YELLOW		:= $(PRE)1;33m
-BLUE		:= $(PRE)1;36m
-RED			:= $(PRE)1;31m
+NC := $(PRE)0m
+GREEN := $(PRE)1;32m
+YELLOW := $(PRE)1;33m
+BLUE := $(PRE)1;36m
+RED := $(PRE)1;31m
 
 # tools
 
-CC			:= gcc
-CPP			:= g++
-CFLAGS		:= $(DEFINES) -Wall -Wextra -Wpedantic -g -MMD -MP -c
+CC := gcc
+CPP := g++
+CFLAGS := $(DEFINES) -Wall -Wextra -Wpedantic -g -MMD -MP -c
 
-FLEX		:= flex
-FLEXFLAGS	:= 
+FLEX := flex
+FLEXFLAGS := 
 
-BISON		:= bison
-BISONFLAGS	:= -d
+BISON := bison
+BISONFLAGS := -d
 
-RM			:= rm
-RMFLAGS		:= -f
+RM := rm
+RMFLAGS := -f
 
 # make
 
