@@ -11,12 +11,41 @@
 %option noinput
 %option nounput
 
+/* regular expressions for allowed tokens */
+
 str         \"(\\.|[^"\\])*\" 
+/*
+ * strings can be any
+ * sequence of characters
+ * with the exception that
+ * backslashes(\) and
+ * double quotes (")
+ * need to be escaped by
+ * placing a backslash
+ * before them
+ */
+
 comma       ,
 colon       :
+
 lbrace      \{
 rbrace      \}
+
 whitespace  [ \t\n\r]
+/*
+ * whitespace is ignored
+ * by the parser, it
+ * consists of:
+ *  * space
+ *  * tabs
+ *  * newlines
+ *  * carriage returns
+ */
+
+/* here, we set the rules for what flex does
+ * when it encounters each symbol in the form:
+{symbol-name}   { // handle errors or fill in yylval with the data and return the symbol type }
+ */
 
 %%
 {whitespace}    ;
