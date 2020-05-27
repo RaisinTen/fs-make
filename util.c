@@ -3,14 +3,14 @@
 #include "commons.h"
 #include "util.h"
 
-void strip_quotes(char* s)
+void strip_quotes(char* str)
 {
-    const int N = strlen(s) - 3;
+    const int N = strlen(str) - 3;
     int i = 0;
     while(i <= N)
     {
-        s[i] = s[i + 1];
+        str[i] = str[i + 1];
         ++i;
     }
-    s[i] = '\0';
+    str[i] = '\0';
 }

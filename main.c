@@ -6,6 +6,7 @@
 #include "pretty_print.h"
 #include "script_generator.h"
 
+// holds the entire AST (Abstract Syntax Tree)
 struct Node* root;
 
 int main(int argc, char* argv[])
