@@ -8,7 +8,7 @@ $ git clone https://github.com/<your-github-username>/fs-make
 $ cd fs-make
 ```
 
-Make changes till you are satisfied and finally make a pull request.
+Make changes till you are satisfied and finally [make a pull request](https://github.com/RaisinTen/fs-make/pulls).
 
 Here are the types of contributions we are looking for:
 * new features
