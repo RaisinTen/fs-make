@@ -4,7 +4,7 @@
 
 ---
 
-When you're planning on making a project, it would be very convenient to have a language to express its structure. It would be even better to generate the file system from it. Here's a subset of JSON to help you plan out a file system and the associated parser, **`fs-make` (file system make)**.
+When you're planning on making a project, it would be very convenient to have a language to express its structure. It would be even better to generate the file system from it. Here's a data format, similar to [JSON](https://www.json.org/json-en.html) to help you plan out a file system and the associated parser, **`fs-make` (file system make)**.
 
 ## Grammar accepted by the Parser
 
@@ -86,3 +86,15 @@ $ make
 Here's an example:
 
 ![example](https://github.com/RaisinTen/fs-make/raw/master/fs-make-demo.png)
+
+## Code of Conduct
+
+Please refer to the [code of conduct](CODE_OF_CONDUCT.md) for the rules for interacting with this project.
+
+## Contributing
+
+Please go through the [contributing](CONTRIBUTING.md) documentation to contribute to this project.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
