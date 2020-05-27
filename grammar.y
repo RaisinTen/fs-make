@@ -7,6 +7,11 @@
 #include "errors.h"
 %}
 
+/*
+ * this union stores all the types
+ * allowed for the symbols in the
+ * grammar to be parsed
+ */
 %union
 {
     char cval;
@@ -14,11 +19,29 @@
     struct Node* nval;
 }
 
-%token<ival> NUM
+/* declaration of terminal symbols */
 %token<cval> COMMA COLON LBRACE RBRACE
 %token<sval> STR
 
+/* declaration of non-terminal symbols */
 %type<nval> all dir files collection file
+
+/*
+ * here are the production rules
+ * of the grammar, each of the form:
+
+non-terminal
+: <list of terminals and non-terminals>     { // code to form this particular part of the AST }
+| <list of terminals and non-terminals>     { // code to form this particular part of the AST }
+...
+;
+
+ * In each production, the part before the colon (:)
+ * is accessed using the $$ symbol and each symbol
+ * of the list of terminals are accessed like this:
+ * $1, $2, $3, ...
+ * in their respective order of appearance
+ */
 
 %%
 all
