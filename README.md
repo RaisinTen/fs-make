@@ -1,6 +1,16 @@
-# fs-make
-
-![C/C++ CI](https://github.com/RaisinTen/fs-make/workflows/C/C++%20CI/badge.svg)
+<p align="center">
+    <a href="#">
+        <img src="https://github.com/RaisinTen/fs-make/raw/master/logo.svg" width="320"
+            alt="fs-make logo"></a>
+</p>
+<p align="center">
+    <a href="https://github.com/RaisinTen/fs-make/actions">
+        <img src="https://github.com/RaisinTen/fs-make/workflows/C/C++%20CI/badge.svg"
+            alt="CI"></a>
+    <a href="LICENSE">
+        <img src="https://img.shields.io/github/license/RaisinTen/fs-make"
+            alt="LICENSE MIT"></a>
+</p>
 
 ---
 
