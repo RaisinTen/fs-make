@@ -4,7 +4,7 @@
 
 ---
 
-When you're planning on making a project, it would be very convenient to have a language to express its structure. It would be even better to generate the file system from it. Here's a subset of JSON to help you plan out a file system and the associated parser, **`fs-make` (file system make)**! :blush:
+When you're planning on making a project, it would be very convenient to have a language to express its structure. It would be even better to generate the file system from it. Here's a subset of JSON to help you plan out a file system and the associated parser, **`fs-make` (file system make)**.
 
 ## Grammar accepted by the Parser
 
@@ -76,11 +76,11 @@ $ make
 1. Create a file describing the project structure.
 2. Use `fs-make` to generate the shell script to make the file system like this:
     ```sh
-    fs-make description.json script.sh
+    $ fs-make description.json script.sh
     ```
 3. Run the script:
     ```sh
-    bash ./script.sh
+    $ bash ./script.sh
     ```
 
 Here's an example:
