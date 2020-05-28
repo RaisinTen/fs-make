@@ -17,7 +17,7 @@ $ make install
 
 Make changes till you are satisfied and finally [make a pull request](https://github.com/RaisinTen/fs-make/pulls).
 
-Here are the types of contributions we are looking for:
+Here are the types of contributions that are appreciated:
 * new features
 * bug-fixes
 * code refactoring
