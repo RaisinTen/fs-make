@@ -14,7 +14,7 @@
 
 ---
 
-When you're planning on making a project, it would be very convenient to have a language to express its structure. It would be even better to generate the file system from it. Here's a data format, similar to [JSON](https://www.json.org/json-en.html) to help you plan out a file system and the associated parser, **`fs-make` (file system make)**.
+When you're planning on making a project, it would be very convenient to have a language to express its structure. It would be even better to generate the file system from it. Here's a data format, similar to [JSON](https://www.json.org/json-en.html) to help you plan out a file system and the associated parser, **fs-make (file system make)**.
 
 ## Grammar accepted by the Parser
 
@@ -68,17 +68,12 @@ Clone the repo with:
 $ git clone https://github.com/RaisinTen/fs-make.git
 $ cd fs-make
 ```
-Install all the requirements with:
+
+Build it using:
 ```sh
-$ make install
-```
-Build the executable from source and add its symbolic link to `usr/local/bin/` with:
-```sh
-$ make all
-```
-or just:
-```sh
+$ sudo ./configure
 $ make
+$ sudo make install
 ```
 
 ## Usage

@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+
+# requirements
+
+CC=$(which gcc)
+CPP=$(which g++)
+FLEX=$(which flex)
+BISON=$(which bison)
+TREE=$(which tree)
+
+# gcc
+
+if [ -f "${CC}" ]
+then
+    # found
+    echo "gcc found at ${CC}"
+else
+    # not found, installing
+    apt-get install build-essential -y
+    CC=$(which gcc)
+    echo "gcc found at ${CC}"
+fi
+
+# g++
+
+if [ -f "${CPP}" ]
+then
+    # found
+    echo "g++ found at ${CPP}"
+else
+    # not found, installing
+    apt-get install build-essential -y
+    CPP=$(which g++)
+    echo "g++ found at ${CPP}"
+fi
+
+# flex
+
+if [ -f "${FLEX}" ]
+then
+    # found
+    echo "flex found at ${FLEX}"
+else
+    # not found, installing
+    echo "installing flex"
+    apt-get install flex -y
+    FLEX=$(which flex)
+    echo "flex found at ${FLEX}"
+fi
+
+# bison
+
+if [ -f "${BISON}" ]
+then
+    # found
+    echo "bison found at ${BISON}"
+else
+    # not found, installing
+    apt-get install bison -y
+    BISON=$(which bison)
+    echo "bison found at ${BISON}"
+fi
+
+# tree
+
+if [ -f "${TREE}" ]
+then
+    # found
+    echo "tree found at ${TREE}"
+else
+    # not found, installing
+    apt-get install tree -y
+    TREE=$(which tree)
+    echo "tree found at ${TREE}"
+fi
+
+echo -e "\
+CC := ${CC}\n\
+CPP := ${CPP}\n\
+FLEX := ${FLEX}\n\
+BISON := ${BISON}\n\
+TREE := ${TREE}\n\
+" > tools

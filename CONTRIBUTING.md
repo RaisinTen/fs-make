@@ -8,9 +8,16 @@ $ git clone https://github.com/<your-github-username>/fs-make
 $ cd fs-make
 ```
 
+Build it like this:
+```sh
+$ sudo ./configure
+$ make
+$ make install
+```
+
 Make changes till you are satisfied and finally [make a pull request](https://github.com/RaisinTen/fs-make/pulls).
 
-Here are the types of contributions we are looking for:
+Here are the types of contributions that are appreciated:
 * new features
 * bug-fixes
 * code refactoring
@@ -33,25 +40,15 @@ The [`tree`](https://en.wikipedia.org/wiki/Tree_(command)) command is a recursiv
 
 ### Build
 
-The [`Makefile`](Makefile) is used to build `fs-make`.
+First, the [`configure script`](configure) installs all the dependencies and requires superuser privileges. It generates a file, `tools` which stores references to the requirements. It is used by the `Makefile`.
 
-First, all the dependencies: build-essential, flex, bison and tree are installed using:
-```sh
-$ make install
-```
+The [`Makefile`](Makefile) is used to build `fs-make` in the current directory by using the `make` command. It uses Automatic-Dependency Generation so that contributing by adding new files is completely hassle-free. No need to separately add recipes for newly added files. It automatically detects the new files and the files it depeneds on.
 
-After that, `fs-make` can be built by:
-```sh
-$ make all
-```
-or simply:
-```sh
-$ make
-```
+Again, with superuser privileges, the executable `fs-make` is installed to `/usr/local/bin` using the `make install` command.
 
-This builds the target and adds a symbolic link of the executable to `/usr/local/bin` so that the program can be run from anywhere by just mentioning its name.
+Similarly, the executable can be uninstalled via the `make uninstall` command with superuser privileges.
 
-The Makefile uses Automatic-Dependency Generation so that contributing by adding new files is completely hassle-free. No need to separately add recipes for newly added files. It automatically detects the new files and the files it depeneds on.
+The directory is cleaned using `make clean`.
 
 ### Usage
 
