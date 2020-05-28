@@ -56,6 +56,7 @@ FLEXFLAGS :=
 BISONFLAGS := -d
 RMFLAGS := -f
 CPFLAGS := 
+TREEFLAGS := 
 
 # make
 
