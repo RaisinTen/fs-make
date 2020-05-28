@@ -79,5 +79,5 @@ CC := ${CC}\n\
 CPP := ${CPP}\n\
 FLEX := ${FLEX}\n\
 BISON := ${BISON}\n\
-TREE := ${tree}\n\
+TREE := ${TREE}\n\
 " > tools
