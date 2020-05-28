@@ -15,10 +15,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Configure
+      run: sudo ./configure
+    - name: Make
+      run: make
     - name: Install
-      run: make install
-    - name: Build
-      run: make all
+      run: sudo make install
     - name: Running on sample.json
       run: |
         cd ./tests
@@ -27,3 +29,7 @@ jobs:
         cd root
         bash ../out-sample.sh
         tree
+    - name: Clean
+      run: make clean
+    - name: Uninstall
+      run: sudo make uninstall
