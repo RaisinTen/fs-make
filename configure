@@ -6,6 +6,7 @@ CC=$(which gcc)
 CPP=$(which g++)
 FLEX=$(which flex)
 BISON=$(which bison)
+TREE=$(which tree)
 
 # gcc
 
@@ -60,9 +61,23 @@ else
     echo "bison found at ${BISON}"
 fi
 
+# tree
+
+if [ -f "${TREE}" ]
+then
+    # found
+    echo "tree found at ${TREE}"
+else
+    # not found, installing
+    apt-get install tree -y
+    TREE=$(which tree)
+    echo "tree found at ${TREE}"
+fi
+
 echo -e "\
 CC := ${CC}\n\
 CPP := ${CPP}\n\
 FLEX := ${FLEX}\n\
 BISON := ${BISON}\n\
+TREE := ${tree}\n\
 " > tools
