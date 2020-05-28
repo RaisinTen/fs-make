@@ -68,17 +68,12 @@ Clone the repo with:
 $ git clone https://github.com/RaisinTen/fs-make.git
 $ cd fs-make
 ```
-Install all the requirements with:
+
+Build it using:
 ```sh
-$ make install
-```
-Build the executable from source and add its symbolic link to `usr/local/bin/` with:
-```sh
-$ make all
-```
-or just:
-```sh
+$ sudo ./configure
 $ make
+$ sudo make install
 ```
 
 ## Usage
