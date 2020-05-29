@@ -28,7 +28,7 @@ jobs:
         mkdir root
         cd root
         bash ../out-sample.sh
-        tree
+        tree -a
     - name: Clean
       run: make clean
     - name: Uninstall
