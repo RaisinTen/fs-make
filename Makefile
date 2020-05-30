@@ -47,7 +47,7 @@ RED := $(PRE)1;31m
 -include tools
 
 RM := rm
-CP := cp
+IN := install
 
 # flags
 
@@ -55,7 +55,7 @@ CFLAGS := $(DEFINES) -Wall -Wextra -Wpedantic -g -MMD -MP -c
 FLEXFLAGS := 
 BISONFLAGS := -d
 RMFLAGS := -f
-CPFLAGS := 
+INFLAGS := 
 TREEFLAGS := -a
 
 # make
@@ -69,7 +69,7 @@ uninstall:
 
 install:
 	@echo "$(GREEN)Installing $(TARGET)$(NC)"
-	$(CP) $(CPFLAGS) $(TARGET) $(BIN)/$(TARGET)
+	$(IN) $(INFLAGS) $(TARGET) $(BIN)/$(TARGET)
 
 $(TARGET): $(OBJECTS)
 	@echo "$(YELLOW)Making $@$(NC)"
