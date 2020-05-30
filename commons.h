@@ -5,9 +5,16 @@ extern "C"
 {
 #endif
 
-int yylex(); // main entry point for flex, required by bison to invoke flex
-int yyparse(); // required by main to build the AST (Abstract Syntax Tree)
-struct Node* root; // holds the entire AST
+extern int yylex(); // main entry point for flex, required by bison to invoke flex
+extern int yyparse(); // required by main to build the AST (Abstract Syntax Tree)
+
+extern struct Node* root; // holds the entire AST
+
+#include <stdio.h>
+
+extern FILE* yyin;
+extern FILE* infile;
+extern FILE* outfile;
 
 #ifdef __cplusplus
 }

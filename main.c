@@ -8,6 +8,8 @@
 
 // holds the entire AST (Abstract Syntax Tree)
 struct Node* root;
+FILE* infile;
+FILE* outfile;
 
 int main(int argc, char* argv[])
 {
