@@ -3,6 +3,7 @@
 #include "commons.h"
 #include "script_generator.h"
 #include "node.h"
+#include "util.h"
 
 void generate_script(const struct Node* node)
 {
@@ -36,15 +37,15 @@ void generate_script_node(struct Node* node)
 
 void cd(const char* str)
 {
-    printf("cd \"%s\"\n", str);
+    log_outfile("cd \"%s\"\n", str);
 }
 
 void mkdir_p(const char* str)
 {
-    printf("mkdir -p \"%s\"\n", str);
+    log_outfile("mkdir -p \"%s\"\n", str);
 }
 
 void touch(const char* str)
 {
-    printf("touch \"%s\"\n", str);
+    log_outfile("touch \"%s\"\n", str);
 }

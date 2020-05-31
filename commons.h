@@ -12,7 +12,6 @@ extern struct Node* root; // holds the entire AST
 
 #include <stdio.h>
 
-extern FILE* yyin;
 extern FILE* infile;
 extern FILE* outfile;
 

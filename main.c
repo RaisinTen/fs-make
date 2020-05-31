@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include "commons.h"
+#include "util.h"
 #include "node.h"
 #include "pretty_print.h"
 #include "script_generator.h"
@@ -10,6 +11,8 @@
 struct Node* root;
 FILE* infile;
 FILE* outfile;
+
+extern FILE* yyin;
 
 int main(int argc, char* argv[])
 {
@@ -54,7 +57,8 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    if(freopen(argv[1], "r", stdin) == NULL)
+    // if(infile = freopen(argv[1], "r", stdin) == NULL)
+    if((infile = fopen(argv[1], "r")) == NULL)
     {
         fprintf
             (
@@ -66,7 +70,8 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    if(freopen(argv[2], "w", stdout) == NULL)
+    // if(freopen(argv[2], "w", stdout) == NULL)
+    if((outfile = fopen(argv[2], "w")) == NULL)
     {
         fprintf
             (
@@ -78,11 +83,15 @@ int main(int argc, char* argv[])
         return 1;
     }
 
+    yyin = infile;
     yyparse();
 
     generate_script(root);
-    // pretty_print_element(root, 0);
+    pretty_print_element(root, 0);
     clear(root);
+
+    fclose(infile);
+    fclose(outfile);
 
     return 0;
 }

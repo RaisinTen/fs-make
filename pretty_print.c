@@ -4,6 +4,7 @@
 #include "commons.h"
 #include "pretty_print.h"
 #include "node.h"
+#include "util.h"
 
 void pretty_print_element(struct Node* node, int indent)
 {
@@ -13,7 +14,7 @@ void pretty_print_element(struct Node* node, int indent)
     {
         ++indent;
         pretty_print(node->children, indent);
-        puts("");
+        log_stdout("\n");
         --indent;
     }
 
@@ -25,7 +26,7 @@ void pretty_print(struct Node* node, int indent)
 {
     pretty_print_tabs(indent);
 
-    printf("\"%s\"", node->name);
+    log_stdout("\"%s\"", node->name);
 
     pretty_print_colon();
     if(node->children)
@@ -34,7 +35,8 @@ void pretty_print(struct Node* node, int indent)
     }
     else
     {
-        printf("null");
+        // printf("null");
+        log_stdout("null");
     }
 
     if(node->next)
@@ -46,28 +48,28 @@ void pretty_print(struct Node* node, int indent)
 
 void pretty_print_lbrace()
 {
-    puts("{");
+    log_stdout("{\n");
 }
 
 void pretty_print_rbrace()
 {
-    printf("}");
+    log_stdout("}");
 }
 
 void pretty_print_colon()
 {
-    printf(": ");
+    log_stdout(": ");
 }
 
 void pretty_print_comma()
 {
-    puts(",");
+    log_stdout(",\n");
 }
 
 void pretty_print_tabs(int num_tabs)
 {
     for(int i = 0; i < num_tabs; ++i)
     {
-        printf("    ");
+        log_stdout("    ");
     }
 }
