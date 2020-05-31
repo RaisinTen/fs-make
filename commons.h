@@ -12,9 +12,6 @@ extern struct Node* root; // holds the entire AST
 
 #include <stdio.h>
 
-extern FILE* infile;
-extern FILE* outfile;
-
 #ifdef __cplusplus
 }
 #endif
