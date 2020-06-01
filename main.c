@@ -26,21 +26,16 @@ int main(int argc, char* argv[])
     {
         if(strcmp(argv[1], "-v") == 0 || strcmp(argv[1], "--version") == 0)
         {
-            // puts(TARGET " " VERSION);
             log_stdout(TARGET " " VERSION "\n");
         }
         else if(strcmp(argv[1], "--help") == 0)
         {
-            // puts(TARGET " " VERSION);
             log_stdout(TARGET " " VERSION "\n");
-            // puts(Usage);
             log_stdout(Usage);
         }
         else
         {
-            // fprintf(stderr, "invalid argument: %s\n", argv[1]);
             log_stderr("invalid argument: %s\n", argv[1]);
-            // fputs(Usage, stderr);
             log_stderr(Usage);
 
             return 1;
@@ -51,33 +46,26 @@ int main(int argc, char* argv[])
 
     if(argc != 3)
     {
-        // fputs("invalid arguments:", stderr);
         log_stderr("invalid arguments:");
         for(int i = 1; i < argc; ++i)
         {
-            // fprintf(stderr, " %s", argv[i]);
             log_stderr(" %s", argv[i]);
         }
-        // fputs("\n", stderr);
         log_stderr("\n");
-        // fputs(Usage, stderr);
         log_stdout(Usage);
 
         return 1;
     }
 
-    // if(infile = freopen(argv[1], "r", stdin) == NULL)
     if((infile = fopen(argv[1], "r")) == NULL)
     {
         log_stderr("%s: infile couldn't be open", argv[1]);
         return 1;
     }
 
-    // if(freopen(argv[2], "w", stdout) == NULL)
     if((outfile = fopen(argv[2], "w")) == NULL)
     {
         log_stderr("%s: outfile couldn't be open", argv[2]);
-
         return 1;
     }
 
@@ -85,7 +73,7 @@ int main(int argc, char* argv[])
     yyparse();
 
     generate_script(root);
-    pretty_print_element(root, 0);
+    // pretty_print_element(root, 0);
     clear(root);
 
     fclose(infile);
