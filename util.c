@@ -18,18 +18,6 @@ void strip_quotes(char* str)
 #include <stdarg.h>
 
 /*
- * infile logger
- */
-extern FILE* infile;
-void log_infile(const char* format, ...)
-{
-    va_list args;
-    va_start(args, format);
-    vfprintf(infile, format, args);
-    va_end(args);
-}
-
-/*
  * outfile logger
  */
 extern FILE* outfile;
