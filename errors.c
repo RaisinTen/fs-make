@@ -3,9 +3,10 @@
 
 #include "commons.h"
 #include "errors.h"
+#include "util.h"
 
 void yyerror(const char* msg)
 {
-    fputs(msg, stderr);
+    log_stderr(msg);
     exit(EXIT_FAILURE);
 }

@@ -12,7 +12,7 @@ struct Node
     char* name; // name of the file or directory
 };
 
-void clear(struct Node* node); // clears the memory allocated for node and its children
+extern void clear(struct Node* node); // clears the memory allocated for node and its children
 
 #ifdef _cplusplus
 }
