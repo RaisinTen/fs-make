@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+command -v gcc   >/dev/null 2>&1 || { echo >&2 "gcc is being installed";   apt-get install build-essential; }
+command -v g++   >/dev/null 2>&1 || { echo >&2 "g++ is being installed";   apt-get install build-essential; }
+command -v flex  >/dev/null 2>&1 || { echo >&2 "flex is being installed";  apt-get install flex;            }
+command -v bison >/dev/null 2>&1 || { echo >&2 "bison is being installed"; apt-get install bison;           }
+command -v tree  >/dev/null 2>&1 || { echo >&2 "tree is being installed";  apt-get install tree;            }
+
+CC=$(command -v gcc)
+CPP=$(command -v g++)
+FLEX=$(command -v flex)
+BISON=$(command -v bison)
+TREE=$(command -v tree)
+
+echo "gcc found at: ${CC}";
+echo "g++ found at: ${CPP}";
+echo "flex found at: ${FLEX}";
+echo "bison found at: ${BISON}";
+echo "tree found at: ${TREE}";
+
+echo -e "\
+CC := ${CC}\n\
+CPP := ${CPP}\n\
+FLEX := ${FLEX}\n\
+BISON := ${BISON}\n\
+TREE := ${TREE}\n\
+" > tools
+
