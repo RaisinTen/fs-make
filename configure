@@ -4,5 +4,5 @@ if [[ "$OSTYPE" == "darwin"* ]]
 then
     ./configure_darwin
 else
-    ./configure_others
+    sudo ./configure_others
 fi
