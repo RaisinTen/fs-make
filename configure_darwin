@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-command -v gcc-8 >/dev/null 2>&1 || { echo >&2 "gcc-8 is being installed"; apt-get install build-essential; }
-command -v g++-8 >/dev/null 2>&1 || { echo >&2 "g++-8 is being installed"; apt-get install build-essential; }
-command -v flex  >/dev/null 2>&1 || { echo >&2 "flex is being installed";  apt-get install flex;            }
-command -v bison >/dev/null 2>&1 || { echo >&2 "bison is being installed"; apt-get install bison;           }
-command -v tree  >/dev/null 2>&1 || { echo >&2 "tree is being installed";  apt-get install tree;            }
+command -v gcc-8 >/dev/null 2>&1 || { echo >&2 "gcc-8 is being installed"; brew install build-essential; }
+command -v g++-8 >/dev/null 2>&1 || { echo >&2 "g++-8 is being installed"; brew install build-essential; }
+command -v flex  >/dev/null 2>&1 || { echo >&2 "flex is being installed";  brew install flex;            }
+command -v bison >/dev/null 2>&1 || { echo >&2 "bison is being installed"; brew install bison;           }
+command -v tree  >/dev/null 2>&1 || { echo >&2 "tree is being installed";  brew install tree;            }
 
 CC=$(command -v gcc-8)
 CPP=$(command -v g++-8)
