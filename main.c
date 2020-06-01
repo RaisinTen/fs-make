@@ -4,11 +4,11 @@
 #include "commons.h"
 #include "util.h"
 #include "node.h"
-#include "pretty_print.h"
 #include "script_generator.h"
 
 // holds the entire AST (Abstract Syntax Tree)
 struct Node* root;
+
 FILE* infile;
 FILE* outfile;
 
@@ -73,11 +73,6 @@ int main(int argc, char* argv[])
     yyparse();
 
     generate_script(root);
-
-#if 0
-    pretty_print_element(root, 0);
-    log_stdout("\n");
-#endif
 
     clear(root);
 
