@@ -73,7 +73,12 @@ int main(int argc, char* argv[])
     yyparse();
 
     generate_script(root);
-    // pretty_print_element(root, 0);
+
+#if 0
+    pretty_print_element(root, 0);
+    log_stdout("\n");
+#endif
+
     clear(root);
 
     fclose(infile);
