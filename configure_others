@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-command -v gcc   >/dev/null 2>&1 || { echo >&2 "gcc is being installed";   apt-get install build-essential; }
-command -v g++   >/dev/null 2>&1 || { echo >&2 "g++ is being installed";   apt-get install build-essential; }
-command -v flex  >/dev/null 2>&1 || { echo >&2 "flex is being installed";  apt-get install flex;            }
-command -v bison >/dev/null 2>&1 || { echo >&2 "bison is being installed"; apt-get install bison;           }
-command -v tree  >/dev/null 2>&1 || { echo >&2 "tree is being installed";  apt-get install tree;            }
+PACKAGE_MANAGER="apt";
+
+command -v gcc   >/dev/null 2>&1 || { echo >&2 "gcc is being installed";   sudo ${PACKAGE_MANAGER} install build-essential; }
+command -v g++   >/dev/null 2>&1 || { echo >&2 "g++ is being installed";   sudo ${PACKAGE_MANAGER} install build-essential; }
+command -v flex  >/dev/null 2>&1 || { echo >&2 "flex is being installed";  sudo ${PACKAGE_MANAGER} install flex;            }
+command -v bison >/dev/null 2>&1 || { echo >&2 "bison is being installed"; sudo ${PACKAGE_MANAGER} install bison;           }
+command -v tree  >/dev/null 2>&1 || { echo >&2 "tree is being installed";  sudo ${PACKAGE_MANAGER} install tree;            }
 
 CC=$(command -v gcc)
 CPP=$(command -v g++)
