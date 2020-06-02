@@ -92,14 +92,18 @@ $ make install
 
 ## Usage
 
-1. Create a file describing the project structure.
-2. Use `fs-make` to generate the shell script to make the file system like this:
+1. Create a file (say, `description.json`) describing the structure of a directory (say, `project`).
+2. Use `fs-make` to make the script file (say, `script.sh`) that generates the file system like this:
     ```sh
     $ fs-make description.json script.sh
     ```
-3. Run the script:
+3. Run the script to generate the file system:
     ```sh
-    $ bash ./script.sh
+    $ . ./script.sh
+    ```
+4. To verify the structure of the generated directory (in this case, `project` directory):
+    ```sh
+    $ tree -a project
     ```
 
 Here's an example:
