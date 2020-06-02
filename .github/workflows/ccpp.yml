@@ -27,10 +27,8 @@ jobs:
       run: |
         cd ./tests
         fs-make sample.json out-sample.sh
-        mkdir root
-        cd root
-        bash ../out-sample.sh
-        tree -a
+        . ./out-sample.sh
+        tree -a project
     - name: Clean
       run: make clean
     - name: Uninstall
