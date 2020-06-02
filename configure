@@ -1,8 +1,34 @@
 #!/usr/bin/env bash
 
+export PRE="\033["
+
+export NC="${PRE}0m"
+export GREEN="${PRE}1;32m"
+export YELLOW="${PRE}1;33m"
+export BLUE="${PRE}1;36m"
+export RED="${PRE}1;31m"
+
 if [[ "$OSTYPE" == "darwin"* ]]
 then
-    ./configure_darwin
+    source configure_darwin
 else
-    ./configure_others
+    source configure_others
 fi
+
+echo -e "\
+CC := ${CC}\n\
+CPP := ${CPP}\n\
+FLEX := ${FLEX}\n\
+BISON := ${BISON}\n\
+TREE := ${TREE}\n\
+" > tools
+
+echo -e "${BLUE}Summary${NC}"
+echo -e "${YELLOW}CC${NC} found at: ${YELLOW}${CC}${NC}"
+echo -e "${YELLOW}CPP${NC} found at: ${YELLOW}${CPP}${NC}"
+echo -e "${YELLOW}FLEX${NC} found at: ${YELLOW}${FLEX}${NC}"
+echo -e "${YELLOW}BISON${NC} found at: ${YELLOW}${BISON}${NC}"
+echo -e "${YELLOW}TREE${NC} found at: ${YELLOW}${TREE}${NC}\n"
+
+echo -e "${GREEN}Configuration complete!${NC}\n"
+echo -e "${BLUE}Now, build ${YELLOW}fs-make ${BLUE}with: ${YELLOW}make${NC}"
