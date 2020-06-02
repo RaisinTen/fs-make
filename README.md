@@ -71,9 +71,9 @@ $ cd fs-make
 
 Build it using:
 ```sh
-$ sudo ./configure
+$ ./configure
 $ make
-$ sudo make install
+$ make install
 ```
 
 ## Usage
