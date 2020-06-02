@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PACKAGE_MANAGER="apt";
+PACKAGE_MANAGER="apt"
 
 command -v gcc   >/dev/null 2>&1 || { echo >&2 "gcc is being installed";   sudo ${PACKAGE_MANAGER} install build-essential; }
 command -v g++   >/dev/null 2>&1 || { echo >&2 "g++ is being installed";   sudo ${PACKAGE_MANAGER} install build-essential; }
