@@ -107,6 +107,9 @@ grammar.tab.c grammar.tab.h: grammar.y
 clean:
 	@echo "$(RED)... cleaning up ...$(NC)\n"
 	$(RM) $(RMFLAGS) $(OBJECTS) $(DEPS) $(YYFILES) $(TABFILES) $(TARGET)
+	@echo ""
+	@echo "$(RED)Cleaning complete!$(NC)\n"
+	@echo "$(BLUE)Now, build $(YELLOW)$(TARGET)$(BLUE) with: $(YELLOW)make$(NC)"
 
 # from the generated dependency files
 
