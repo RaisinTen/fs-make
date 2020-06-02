@@ -23,12 +23,12 @@ BISON := ${BISON}\n\
 TREE := ${TREE}\n\
 " > tools
 
-echo -e "${BLUE}Summary${NC}"
-echo -e "${YELLOW}CC${NC} found at: ${YELLOW}${CC}${NC}"
-echo -e "${YELLOW}CPP${NC} found at: ${YELLOW}${CPP}${NC}"
-echo -e "${YELLOW}FLEX${NC} found at: ${YELLOW}${FLEX}${NC}"
-echo -e "${YELLOW}BISON${NC} found at: ${YELLOW}${BISON}${NC}"
-echo -e "${YELLOW}TREE${NC} found at: ${YELLOW}${TREE}${NC}\n"
+echo -e "${GREEN}Summary${NC}"
+echo -e "${YELLOW}CC${BLUE} found at: ${YELLOW}${CC}${NC}"
+echo -e "${YELLOW}CPP${BLUE} found at: ${YELLOW}${CPP}${NC}"
+echo -e "${YELLOW}FLEX${BLUE} found at: ${YELLOW}${FLEX}${NC}"
+echo -e "${YELLOW}BISON${BLUE} found at: ${YELLOW}${BISON}${NC}"
+echo -e "${YELLOW}TREE${BLUE} found at: ${YELLOW}${TREE}${NC}\n"
 
 echo -e "${GREEN}Configuration complete!${NC}\n"
 echo -e "${BLUE}Now, build ${YELLOW}fs-make ${BLUE}with: ${YELLOW}make${NC}"
