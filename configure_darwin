@@ -12,11 +12,11 @@ FLEX=$(command -v flex)
 BISON=$(command -v bison)
 TREE=$(command -v tree)
 
-echo "gcc-8 found at: ${CC}";
-echo "g++-8 found at: ${CPP}";
-echo "flex found at: ${FLEX}";
-echo "bison found at: ${BISON}";
-echo "tree found at: ${TREE}";
+echo "gcc-8 found at: ${CC}"
+echo "g++-8 found at: ${CPP}"
+echo "flex found at: ${FLEX}"
+echo "bison found at: ${BISON}"
+echo "tree found at: ${TREE}"
 
 echo -e "\
 CC := ${CC}\n\
