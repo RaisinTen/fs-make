@@ -22,7 +22,7 @@ jobs:
     - name: Make
       run: make
     - name: Install
-      run: sudo make install
+      run: make install
     - name: Running on sample.json
       run: |
         cd ./tests
@@ -34,4 +34,4 @@ jobs:
     - name: Clean
       run: make clean
     - name: Uninstall
-      run: sudo make uninstall
+      run: make uninstall

@@ -65,11 +65,11 @@ all: $(TARGET)
 
 uninstall:
 	@echo "$(RED)Uninstalling $(TARGET)$(NC)"
-	$(RM) $(RMFLAGS) $(BIN)/$(TARGET)
+	sudo $(RM) $(RMFLAGS) $(BIN)/$(TARGET)
 
 install:
 	@echo "$(GREEN)Installing $(TARGET)$(NC)"
-	$(IN) $(INFLAGS) $(TARGET) $(BIN)/$(TARGET)
+	sudo $(IN) $(INFLAGS) $(TARGET) $(BIN)/$(TARGET)
 
 $(TARGET): $(OBJECTS)
 	@echo "$(YELLOW)Making $@$(NC)"
