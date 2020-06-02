@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# colours
+
 export PRE="\033["
 
 export NC="${PRE}0m"
@@ -10,10 +12,16 @@ export RED="${PRE}1;31m"
 
 if [[ "$OSTYPE" == "darwin"* ]]
 then
+    # this is for macOS users
+
     source configure_darwin
 else
+    # this is for others
+
     source configure_others
 fi
+
+# writing paths of requirements to tools
 
 echo -e "\
 CC := ${CC}\n\
@@ -23,12 +31,16 @@ BISON := ${BISON}\n\
 TREE := ${TREE}\n\
 " > tools
 
+# summary
+
 echo -e "${GREEN}Summary${NC}"
 echo -e "${YELLOW}CC${BLUE} found at: ${YELLOW}${CC}${NC}"
 echo -e "${YELLOW}CPP${BLUE} found at: ${YELLOW}${CPP}${NC}"
 echo -e "${YELLOW}FLEX${BLUE} found at: ${YELLOW}${FLEX}${NC}"
 echo -e "${YELLOW}BISON${BLUE} found at: ${YELLOW}${BISON}${NC}"
 echo -e "${YELLOW}TREE${BLUE} found at: ${YELLOW}${TREE}${NC}\n"
+
+# end of configuration
 
 echo -e "${GREEN}Configuration complete!${NC}\n"
 echo -e "${BLUE}Now, build ${YELLOW}fs-make ${BLUE}with: ${YELLOW}make${NC}"
