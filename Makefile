@@ -77,7 +77,7 @@ install:
 	sudo $(IN) $(INFLAGS) $(TARGET) $(BIN)/$(TARGET)
 	@echo ""
 	@echo "$(GREEN)Installation complete!$(NC)\n"
-	@echo "$(BLUE)Now, you may run $(YELLOW)$(TARGET)$(BLUE) with: $(YELLOW)$(TARGET)$(NC)"
+	@echo "$(BLUE)Now, run $(YELLOW)$(TARGET)$(BLUE) with: $(YELLOW)$(TARGET)$(NC)"
 
 $(TARGET): $(OBJECTS)
 	@echo "$(BLUE)... making $(YELLOW)$@ $(BLUE)...$(NC)\n"
