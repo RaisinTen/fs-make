@@ -10,26 +10,26 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
     - name: Configure
-      run: sudo ./configure
+      run: ./configure
     - name: Make
       run: make
     - name: Install
-      run: sudo make install
+      run: make install
     - name: Running on sample.json
       run: |
         cd ./tests
         fs-make sample.json out-sample.sh
-        mkdir root
-        cd root
-        bash ../out-sample.sh
-        tree -a
+        . ./out-sample.sh
+        tree -a project
     - name: Clean
       run: make clean
     - name: Uninstall
-      run: sudo make uninstall
+      run: make uninstall

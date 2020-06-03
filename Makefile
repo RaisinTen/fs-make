@@ -1,8 +1,7 @@
-# macros
+# meta
 
 TARGET := fs-make
 VERSION := 1.0.0
-DEFINES := -D TARGET=\"$(TARGET)\" -D VERSION=\"$(VERSION)\"
 
 # files
 
@@ -51,6 +50,8 @@ IN := install
 
 # flags
 
+DEFINES := -D TARGET=\"$(TARGET)\" -D VERSION=\"$(VERSION)\"
+
 CFLAGS := $(DEFINES) -Wall -Wextra -Wpedantic -g -MMD -MP -c
 FLEXFLAGS := 
 BISONFLAGS := -d
@@ -58,43 +59,58 @@ RMFLAGS := -f
 INFLAGS := 
 TREEFLAGS := -a
 
-# make
+# recipes
 
 all: $(TARGET)
-	@echo "$(GREEN)Build complete!$(NC)"
+	@echo "$(GREEN)Build complete!$(NC)\n"
+	@echo "$(BLUE)Now, install $(YELLOW)$(TARGET)$(BLUE) with: $(YELLOW)make install$(NC)"
 
 uninstall:
-	@echo "$(RED)Uninstalling $(TARGET)$(NC)"
-	$(RM) $(RMFLAGS) $(BIN)/$(TARGET)
+	@echo "$(RED)... uninstalling $(YELLOW)$(TARGET)$(RED) ...$(NC)\n"
+	sudo $(RM) $(RMFLAGS) $(BIN)/$(TARGET)
+	@echo ""
+	@echo "$(RED)Uninstallation complete. :($(NC)\n"
+	@echo "$(BLUE)Now, install $(YELLOW)$(TARGET)$(BLUE) with: $(YELLOW)make install$(NC)"
 
 install:
-	@echo "$(GREEN)Installing $(TARGET)$(NC)"
-	$(IN) $(INFLAGS) $(TARGET) $(BIN)/$(TARGET)
+	@echo "$(GREEN)... installing $(YELLOW)$(TARGET)$(GREEN) ...$(NC)\n"
+	sudo $(IN) $(INFLAGS) $(TARGET) $(BIN)/$(TARGET)
+	@echo ""
+	@echo "$(GREEN)Installation complete!$(NC)\n"
+	@echo "$(BLUE)Now, run $(YELLOW)$(TARGET)$(BLUE) with: $(YELLOW)$(TARGET)$(NC)"
 
 $(TARGET): $(OBJECTS)
-	@echo "$(YELLOW)Making $@$(NC)"
+	@echo "$(BLUE)... making $(YELLOW)$@ $(BLUE)...$(NC)\n"
 	$(CPP) -o $(TARGET) $^
+	@echo ""
 
 %.o: %.c
-	@echo "$(BLUE)Making $@$(NC)"
+	@echo "$(BLUE)... making $(YELLOW)$@ $(BLUE)...$(NC)\n"
 	$(CC) $(CFLAGS) $<
+	@echo ""
 
 %.o: %.cpp
-	@echo "$(BLUE)Making $@$(NC)"
+	@echo "$(BLUE)... making $(YELLOW)$@ $(BLUE)...$(NC)\n"
 	$(CPP) $(CFLAGS) $<
+	@echo ""
 
 lex.yy.c: lexer.l
-	@echo "$(BLUE)Making $@$(NC)"
+	@echo "$(BLUE)... making $(YELLOW)$@ $(BLUE)...$(NC)\n"
 	$(FLEX) $(FLEXFLAGS) $<
+	@echo ""
 
 grammar.tab.c grammar.tab.h: grammar.y
-	@echo "$(BLUE)Making grammar.tab.c and grammar.tab.h$(NC)"
+	@echo "$(BLUE)... making $(YELLOW)grammar.tab.c $(BLUE)and $(YELLOW)grammar.tab.h $(BLUE)...$(NC)\n"
 	$(BISON) $(BISONFLAGS) $<
+	@echo ""
 
 clean:
-	@echo "$(RED)Cleaning$(NC)"
+	@echo "$(RED)... cleaning up ...$(NC)\n"
 	$(RM) $(RMFLAGS) $(OBJECTS) $(DEPS) $(YYFILES) $(TABFILES) $(TARGET)
+	@echo ""
+	@echo "$(RED)Cleaning complete!$(NC)\n"
+	@echo "$(BLUE)Now, build $(YELLOW)$(TARGET)$(BLUE) with: $(YELLOW)make$(NC)"
 
-# from generated dependency files
+# from the generated dependency files
 
 -include $(DEPS)

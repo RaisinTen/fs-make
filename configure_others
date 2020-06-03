@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+PACKAGE_MANAGER="apt"
+
+# gcc
+
+command -v gcc >/dev/null 2>&1 || {
+    # not found, installing
+
+    echo -e >&2 "${YELLOW}gcc ${RED}is required but not found${NC}"
+    echo -e >&2 "${BLUE}... installing ${YELLOW}gcc${BLUE} ... ${NC}\n"
+    sudo ${PACKAGE_MANAGER} install build-essential
+    echo -e >&2 ""
+}
+
+# g++
+
+command -v g++ >/dev/null 2>&1 || {
+    # not found, installing
+
+    echo -e >&2 "${YELLOW}g++ ${RED}is required but not found${NC}"
+    echo -e >&2 "${BLUE}... installing ${YELLOW}g++${BLUE} ... ${NC}\n"
+    echo >&2 "g++ is being installed"
+    sudo ${PACKAGE_MANAGER} install build-essential
+    echo -e >&2 ""
+}
+
+# flex
+
+command -v flex >/dev/null 2>&1 || {
+    # not found, installing
+
+    echo -e >&2 "${YELLOW}flex ${RED}is required but not found${NC}"
+    echo -e >&2 "${BLUE}... installing ${YELLOW}flex${BLUE} ... ${NC}\n"
+    sudo ${PACKAGE_MANAGER} install flex
+    echo -e >&2 ""
+}
+
+# bison
+
+command -v bison >/dev/null 2>&1 || {
+    # not found, installing
+
+    echo -e >&2 "${YELLOW}bison ${RED}is required but not found${NC}"
+    echo -e >&2 "${BLUE}... installing ${YELLOW}bison${BLUE} ... ${NC}\n"
+    sudo ${PACKAGE_MANAGER} install bison
+    echo -e >&2 ""
+}
+
+# tree
+
+command -v tree >/dev/null 2>&1 || {
+    # not found, installing
+
+    echo -e >&2 "${YELLOW}tree ${RED}is required but not found${NC}"
+    echo -e >&2 "${BLUE}... installing ${YELLOW}tree${BLUE} ... ${NC}\n"
+    sudo ${PACKAGE_MANAGER} install tree
+    echo -e >&2 ""
+}
+
+# exporting paths
+
+export CC=$(command -v gcc)
+export CPP=$(command -v g++)
+export FLEX=$(command -v flex)
+export BISON=$(command -v bison)
+export TREE=$(command -v tree)

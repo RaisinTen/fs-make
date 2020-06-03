@@ -10,7 +10,7 @@ $ cd fs-make
 
 Build it like this:
 ```sh
-$ sudo ./configure
+$ ./configure
 $ make
 $ make install
 ```
@@ -40,15 +40,15 @@ The [`tree`](https://en.wikipedia.org/wiki/Tree_(command)) command is a recursiv
 
 ### Build
 
-First, the [`configure script`](configure) installs all the dependencies and requires superuser privileges. It generates a file, `tools` which stores references to the requirements. It is used by the `Makefile`.
+First, the [`configure script`](configure) installs all the dependencies. It generates a file, `tools` which stores references to the requirements. It is used by the `Makefile`.
 
 The [`Makefile`](Makefile) is used to build `fs-make` in the current directory by using the `make` command. It uses Automatic-Dependency Generation so that contributing by adding new files is completely hassle-free. No need to separately add recipes for newly added files. It automatically detects the new files and the files it depeneds on.
 
-Again, with superuser privileges, the executable `fs-make` is installed to `/usr/local/bin` using the `make install` command.
+The executable `fs-make` is installed to `/usr/local/bin` using the `make install` command.
 
-Similarly, the executable can be uninstalled via the `make uninstall` command with superuser privileges.
+Similarly, the executable can be uninstalled via the `make uninstall` command.
 
-The directory is cleaned using `make clean`.
+The build directory is cleaned using `make clean`.
 
 ### Usage
 

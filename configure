@@ -1,78 +1,27 @@
 #!/usr/bin/env bash
 
-# requirements
+# colours
 
-CC=$(which gcc)
-CPP=$(which g++)
-FLEX=$(which flex)
-BISON=$(which bison)
-TREE=$(which tree)
+export PRE="\033["
 
-# gcc
+export NC="${PRE}0m"
+export GREEN="${PRE}1;32m"
+export YELLOW="${PRE}1;33m"
+export BLUE="${PRE}1;36m"
+export RED="${PRE}1;31m"
 
-if [ -f "${CC}" ]
+if [[ "$OSTYPE" == "darwin"* ]]
 then
-    # found
-    echo "gcc found at ${CC}"
+    # this is for macOS users
+
+    source configure_darwin
 else
-    # not found, installing
-    apt-get install build-essential -y
-    CC=$(which gcc)
-    echo "gcc found at ${CC}"
+    # this is for others
+
+    source configure_others
 fi
 
-# g++
-
-if [ -f "${CPP}" ]
-then
-    # found
-    echo "g++ found at ${CPP}"
-else
-    # not found, installing
-    apt-get install build-essential -y
-    CPP=$(which g++)
-    echo "g++ found at ${CPP}"
-fi
-
-# flex
-
-if [ -f "${FLEX}" ]
-then
-    # found
-    echo "flex found at ${FLEX}"
-else
-    # not found, installing
-    echo "installing flex"
-    apt-get install flex -y
-    FLEX=$(which flex)
-    echo "flex found at ${FLEX}"
-fi
-
-# bison
-
-if [ -f "${BISON}" ]
-then
-    # found
-    echo "bison found at ${BISON}"
-else
-    # not found, installing
-    apt-get install bison -y
-    BISON=$(which bison)
-    echo "bison found at ${BISON}"
-fi
-
-# tree
-
-if [ -f "${TREE}" ]
-then
-    # found
-    echo "tree found at ${TREE}"
-else
-    # not found, installing
-    apt-get install tree -y
-    TREE=$(which tree)
-    echo "tree found at ${TREE}"
-fi
+# writing paths of requirements to tools
 
 echo -e "\
 CC := ${CC}\n\
@@ -81,3 +30,17 @@ FLEX := ${FLEX}\n\
 BISON := ${BISON}\n\
 TREE := ${TREE}\n\
 " > tools
+
+# summary
+
+echo -e "${GREEN}Summary${NC}"
+echo -e "${YELLOW}CC${BLUE} found at: ${YELLOW}${CC}${NC}"
+echo -e "${YELLOW}CPP${BLUE} found at: ${YELLOW}${CPP}${NC}"
+echo -e "${YELLOW}FLEX${BLUE} found at: ${YELLOW}${FLEX}${NC}"
+echo -e "${YELLOW}BISON${BLUE} found at: ${YELLOW}${BISON}${NC}"
+echo -e "${YELLOW}TREE${BLUE} found at: ${YELLOW}${TREE}${NC}\n"
+
+# end of configuration
+
+echo -e "${GREEN}Configuration complete!${NC}\n"
+echo -e "${BLUE}Now, build ${YELLOW}fs-make ${BLUE}with: ${YELLOW}make${NC}"
