@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef _cplusplus
+#ifdef __cplusplus
 extern "C"
 {
 #endif
@@ -14,6 +14,6 @@ struct Node
 
 extern void clear(struct Node* node); // clears the memory allocated for node and its children
 
-#ifdef _cplusplus
+#ifdef __cplusplus
 }
 #endif
