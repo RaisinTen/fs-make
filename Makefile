@@ -67,14 +67,14 @@ all: $(TARGET)
 
 uninstall:
 	@echo "$(RED)... uninstalling $(YELLOW)$(TARGET)$(RED) ...$(NC)\n"
-	sudo $(RM) $(RMFLAGS) $(BIN)/$(TARGET)
+	$(SUDO) $(RM) $(RMFLAGS) $(BIN)/$(TARGET)
 	@echo ""
 	@echo "$(RED)Uninstallation complete. :($(NC)\n"
 	@echo "$(BLUE)Now, install $(YELLOW)$(TARGET)$(BLUE) with: $(YELLOW)make install$(NC)"
 
 install:
 	@echo "$(GREEN)... installing $(YELLOW)$(TARGET)$(GREEN) ...$(NC)\n"
-	sudo $(IN) $(INFLAGS) $(TARGET) $(BIN)/$(TARGET)
+	$(SUDO) $(IN) $(INFLAGS) $(TARGET) $(BIN)/$(TARGET)
 	@echo ""
 	@echo "$(GREEN)Installation complete!$(NC)\n"
 	@echo "$(BLUE)Now, run $(YELLOW)$(TARGET)$(BLUE) with: $(YELLOW)$(TARGET)$(NC)"

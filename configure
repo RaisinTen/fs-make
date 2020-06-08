@@ -10,6 +10,10 @@ export YELLOW="${PRE}1;33m"
 export BLUE="${PRE}1;36m"
 export RED="${PRE}1;31m"
 
+# sudo
+
+export SUDO=$(command -v sudo)
+
 if [[ "$OSTYPE" == "darwin"* ]]
 then
     # this is for macOS users
@@ -29,6 +33,7 @@ CPP := ${CPP}\n\
 FLEX := ${FLEX}\n\
 BISON := ${BISON}\n\
 TREE := ${TREE}\n\
+SUDO := ${SUDO}\n\
 " > tools
 
 # summary
@@ -38,7 +43,8 @@ echo -e "${YELLOW}CC${BLUE} found at: ${YELLOW}${CC}${NC}"
 echo -e "${YELLOW}CPP${BLUE} found at: ${YELLOW}${CPP}${NC}"
 echo -e "${YELLOW}FLEX${BLUE} found at: ${YELLOW}${FLEX}${NC}"
 echo -e "${YELLOW}BISON${BLUE} found at: ${YELLOW}${BISON}${NC}"
-echo -e "${YELLOW}TREE${BLUE} found at: ${YELLOW}${TREE}${NC}\n"
+echo -e "${YELLOW}TREE${BLUE} found at: ${YELLOW}${TREE}${NC}"
+echo -e "${YELLOW}SUDO${BLUE} found at: ${YELLOW}${SUDO}${NC}\n"
 
 # end of configuration
 
