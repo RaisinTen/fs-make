@@ -6,6 +6,7 @@ VERSION := 1.0.0
 # files
 
 BIN := /usr/local/bin
+INCLUDES := ./includes
 
 YFILES := $(wildcard *.y)
 
@@ -52,7 +53,7 @@ IN := install
 
 DEFINES := -D TARGET=\"$(TARGET)\" -D VERSION=\"$(VERSION)\"
 
-CFLAGS := $(DEFINES) -Wall -Wextra -Wpedantic -g -MMD -MP -c
+CFLAGS := $(DEFINES) -I $(INCLUDES) -Wall -Wextra -Wpedantic -g -MMD -MP -c
 FLEXFLAGS := 
 BISONFLAGS := -d
 RMFLAGS := -f
