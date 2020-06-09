@@ -3,28 +3,34 @@
 TARGET := fs-make
 VERSION := 1.0.0
 
-# files
+# dirs
 
 BIN := /usr/local/bin
+INCLUDES := ./includes
+SRC := ./src
 
-YFILES := $(wildcard *.y)
+# files
+
+YFILES := $(wildcard $(SRC)/*.y)
 
 TABFILES := \
 	$(YFILES:.y=.tab.c) \
 	$(YFILES:.y=.tab.h)
+TABFILES := $(patsubst $(SRC)/%, %, $(TABFILES))
 
 YYFILES := lex.yy.c
 
 CFILES := \
-	$(wildcard *.c) \
+	$(wildcard $(SRC)/*.c) \
 	$(YFILES:.y=.tab.c) \
 	$(YYFILES)
 
-CPPFILES := $(wildcard *.cpp)
+CPPFILES := $(wildcard $(SRC)/*.cpp)
 
 OBJECTS := \
 	$(CFILES:.c=.o) \
 	$(CPPFILES:.cpp=.o)
+OBJECTS := $(patsubst $(SRC)/%, %, $(OBJECTS))
 
 DEPS := $(OBJECTS:.o=.d)
 
@@ -52,7 +58,7 @@ IN := install
 
 DEFINES := -D TARGET=\"$(TARGET)\" -D VERSION=\"$(VERSION)\"
 
-CFLAGS := $(DEFINES) -Wall -Wextra -Wpedantic -g -MMD -MP -c
+CFLAGS := $(DEFINES) -I $(INCLUDES) -Wall -Wextra -Wpedantic -g -MMD -MP -c
 FLEXFLAGS := 
 BISONFLAGS := -d
 RMFLAGS := -f
@@ -84,22 +90,27 @@ $(TARGET): $(OBJECTS)
 	$(CPP) -o $(TARGET) $^
 	@echo ""
 
+%.o: $(SRC)/%.c
+	@echo "$(BLUE)... making $(YELLOW)$@ $(BLUE)...$(NC)\n"
+	$(CC) $(CFLAGS) $<
+	@echo ""
+
 %.o: %.c
 	@echo "$(BLUE)... making $(YELLOW)$@ $(BLUE)...$(NC)\n"
 	$(CC) $(CFLAGS) $<
 	@echo ""
 
-%.o: %.cpp
+%.o: $(SRC)/%.cpp
 	@echo "$(BLUE)... making $(YELLOW)$@ $(BLUE)...$(NC)\n"
 	$(CPP) $(CFLAGS) $<
 	@echo ""
 
-lex.yy.c: lexer.l
+lex.yy.c: $(SRC)/lexer.l
 	@echo "$(BLUE)... making $(YELLOW)$@ $(BLUE)...$(NC)\n"
 	$(FLEX) $(FLEXFLAGS) $<
 	@echo ""
 
-grammar.tab.c grammar.tab.h: grammar.y
+grammar.tab.c grammar.tab.h: $(SRC)/grammar.y
 	@echo "$(BLUE)... making $(YELLOW)grammar.tab.c $(BLUE)and $(YELLOW)grammar.tab.h $(BLUE)...$(NC)\n"
 	$(BISON) $(BISONFLAGS) $<
 	@echo ""
