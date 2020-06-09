@@ -28,11 +28,11 @@ Here are the types of contributions that are appreciated:
 
 ### Flex
 
-This project uses [Flex](www.gnu.org/software/flex/) which is a scanner generator for lexing in [C and C++](https://gcc.gnu.org/). The accepted tokens are described in [`lexer.l`](lexer.l) using regular expressions. We then use `flex` to generate a scanner in C (`lex.yy.c`) which breaks down the contents of the input file into the tokens we defined.
+This project uses [Flex](www.gnu.org/software/flex/) which is a scanner generator for lexing in [C and C++](https://gcc.gnu.org/). The accepted tokens are described in [`lexer.l`](src/lexer.l) using regular expressions. We then use `flex` to generate a scanner in C (`lex.yy.c`) which breaks down the contents of the input file into the tokens we defined.
 
 ### Bison
 
-This project also uses [GNU Bison](www.gnu.org/software/bison/) which is used to generate a parser. The production rules of the grammar is defined in [`grammar.y`](grammar.y). We use `bison` to generate a parser in C, `grammar.tab.c` to group the tokens into various components according to the defined rules. These components together will make up what is called the [abstract syntax tree (AST)](https://en.wikipedia.org/wiki/Abstract_syntax_tree).
+This project also uses [GNU Bison](www.gnu.org/software/bison/) which is used to generate a parser. The production rules of the grammar is defined in [`grammar.y`](src/grammar.y). We use `bison` to generate a parser in C, `grammar.tab.c` to group the tokens into various components according to the defined rules. These components together will make up what is called the [abstract syntax tree (AST)](https://en.wikipedia.org/wiki/Abstract_syntax_tree).
 
 ### Tree
 
