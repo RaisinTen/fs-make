@@ -21,7 +21,6 @@ TABFILES := $(patsubst $(SRC)/%, %, $(TABFILES))
 YYFILES := lex.yy.c
 
 CFILES := \
-	$(wildcard *.c) \
 	$(wildcard $(SRC)/*.c) \
 	$(YFILES:.y=.tab.c) \
 	$(YYFILES)
