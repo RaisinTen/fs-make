@@ -5,9 +5,15 @@ VERSION := 1.0.0
 
 # dirs
 
+# in termux, PREFIX points to /data/data/com.termux/files/usr/
+# else it is empty
 PREFIX := $(shell echo ${PREFIX})
+# by default installs to /usr/local/bin
 BIN := /usr/local/bin
 ifneq ($(PREFIX),)
+	# in linux-android, ${PREFIX}/usr/local/bin
+	# doesn't exist; so instead install it to
+	# ${PREFIX}/usr/bin/
 	BIN := $(PREFIX)/../usr/bin
 endif
 
