@@ -5,7 +5,7 @@ VERSION := 1.0.0
 
 # dirs
 
-BIN := /usr/local/bin
+BIN := $(shell echo ${PREFIX})/../usr/local/bin
 INCLUDES := ./includes
 SRC := ./src
 
