@@ -5,7 +5,12 @@ VERSION := 1.0.0
 
 # dirs
 
-BIN := $(shell echo ${PREFIX})/../usr/bin
+PREFIX := $(shell echo ${PREFIX})
+BIN := /usr/local/bin
+ifneq ($(PREFIX),)
+	BIN := $(PREFIX)/../usr/bin
+endif
+
 INCLUDES := ./includes
 SRC := ./src
 
@@ -52,7 +57,7 @@ RED := $(PRE)1;31m
 -include tools
 
 RM := rm
-LN := ln
+IN := install
 
 # flags
 
@@ -62,7 +67,7 @@ CFLAGS := $(DEFINES) -I $(INCLUDES) -Wall -Wextra -Wpedantic -g -MMD -MP -c
 FLEXFLAGS := 
 BISONFLAGS := -d
 RMFLAGS := -f
-LNFLAGS := -sf
+INFLAGS := 
 TREEFLAGS := -a
 
 # recipes
@@ -80,7 +85,7 @@ uninstall:
 
 install:
 	@echo "$(GREEN)... installing $(YELLOW)$(TARGET)$(GREEN) ...$(NC)\n"
-	$(SUDO) $(LN) $(INFLAGS) $(shell pwd)/$(TARGET) $(BIN)/$(TARGET)
+	$(SUDO) $(IN) $(INFLAGS) $(TARGET) $(BIN)/$(TARGET)
 	@echo ""
 	@echo "$(GREEN)Installation complete!$(NC)\n"
 	@echo "$(BLUE)Now, run $(YELLOW)$(TARGET)$(BLUE) with: $(YELLOW)$(TARGET)$(NC)"
