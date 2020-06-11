@@ -1,7 +1,8 @@
 #include <string.h>
 
-#include "commons.hpp"
 #include "util.hpp"
+
+#include <stdio.h>
 
 void strip_quotes(char* str)
 {

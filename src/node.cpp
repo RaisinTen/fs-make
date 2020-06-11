@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "commons.hpp"
 #include "node.hpp"
 
 void clear(struct Node* node)

@@ -1,7 +1,6 @@
 %{
 #include <stdio.h>
 
-#include "commons.hpp"
 #include "util.hpp"
 #include "errors.hpp"
 #include "grammar.tab.h"

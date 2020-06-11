@@ -1,6 +1,5 @@
 #include <cstdio>
 
-#include "commons.hpp"
 #include "script_generator.hpp"
 #include "node.hpp"
 #include "util.hpp"
