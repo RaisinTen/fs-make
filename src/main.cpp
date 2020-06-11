@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "commons.h"
-#include "util.h"
-#include "node.h"
-#include "script_generator.h"
+#include "commons.hpp"
+#include "util.hpp"
+#include "node.hpp"
+#include "script_generator.hpp"
 
 // holds the entire AST (Abstract Syntax Tree)
 struct Node* root;

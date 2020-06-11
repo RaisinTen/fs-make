@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "commons.h"
-#include "node.h"
+#include "commons.hpp"
+#include "node.hpp"
 
 void clear(struct Node* node)
 {

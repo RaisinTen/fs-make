@@ -1,9 +1,9 @@
 %{
 #include <stdio.h>
 
-#include "commons.h"
-#include "util.h"
-#include "errors.h"
+#include "commons.hpp"
+#include "util.hpp"
+#include "errors.hpp"
 #include "grammar.tab.h"
 %}
 

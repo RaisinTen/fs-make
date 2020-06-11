@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "commons.h"
-#include "node.h"
-#include "errors.h"
+#include "commons.hpp"
+#include "node.hpp"
+#include "errors.hpp"
 %}
 
 /*
