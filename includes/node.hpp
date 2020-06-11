@@ -1,10 +1,5 @@
 #pragma once
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
 struct Node
 {
     struct Node* children; // pointer to a singly linked list of subdirectories and files
@@ -13,7 +8,3 @@ struct Node
 };
 
 extern void clear(struct Node* node); // clears the memory allocated for node and its children
-
-#ifdef __cplusplus
-}
-#endif

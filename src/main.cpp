@@ -7,18 +7,19 @@
 
 extern "C"
 {
-    FILE* infile;
-    FILE* outfile;
-
-    struct Node* root; // holds the entire AST (Abstract Syntax Tree)
-
-    extern FILE* yyin;
-
-    extern int yyparse();
+    int yyparse();
 }
+
+FILE* outfile;
+
+struct Node* root; // holds the entire AST (Abstract Syntax Tree)
+
+extern FILE* yyin;
 
 int main(int argc, char* argv[])
 {
+    FILE* infile;
+
     const char* Usage = 
         "Usage: " TARGET " infile outfile\n"
         "   infile: input file\n"
