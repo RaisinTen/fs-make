@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
 #include "node.hpp"
 
@@ -12,9 +12,9 @@ void clear(struct Node* node)
 
         free(node->name);
 
-        node->next = NULL;
-        node->children = NULL;
-        node->name = NULL;
+        node->next = nullptr;
+        node->children = nullptr;
+        node->name = nullptr;
 
         free(node);
     }
