@@ -1,10 +1,5 @@
 #pragma once
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
 // called with the root to print generate the script
 extern void generate_script(const struct Node* node);
 
@@ -17,7 +12,3 @@ extern void generate_script_node(struct Node* node);
 extern void cd(const char* str);
 extern void mkdir_p(const char* str);
 extern void touch(const char* str);
-
-#ifdef __cplusplus
-}
-#endif

@@ -1,9 +1,8 @@
 #include <cstdio>
 
-#include "commons.h"
-#include "script_generator.h"
-#include "node.h"
-#include "util.h"
+#include "script_generator.hpp"
+#include "node.hpp"
+#include "util.hpp"
 
 void generate_script(const struct Node* node)
 {

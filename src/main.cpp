@@ -1,21 +1,25 @@
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 
-#include "commons.h"
-#include "util.h"
-#include "node.h"
-#include "script_generator.h"
+#include "util.hpp"
+#include "node.hpp"
+#include "script_generator.hpp"
 
-// holds the entire AST (Abstract Syntax Tree)
-struct Node* root;
+extern "C"
+{
+    int yyparse();
+}
 
-FILE* infile;
 FILE* outfile;
+
+struct Node* root; // holds the entire AST (Abstract Syntax Tree)
 
 extern FILE* yyin;
 
 int main(int argc, char* argv[])
 {
+    FILE* infile;
+
     const char* Usage = 
         "Usage: " TARGET " infile outfile\n"
         "   infile: input file\n"

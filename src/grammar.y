@@ -2,9 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "commons.h"
-#include "node.h"
-#include "errors.h"
+#include "node.hpp"
+#include "errors.hpp"
+
+extern int yylex(); // main entry point for flex
+
+extern struct Node* root; // holds the entire AST
+
 %}
 
 /*

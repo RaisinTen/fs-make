@@ -1,7 +1,8 @@
-#include <string.h>
+#include <cstring>
 
-#include "commons.h"
-#include "util.h"
+#include "util.hpp"
+
+#include <cstdio>
 
 void strip_quotes(char* str)
 {
@@ -15,7 +16,7 @@ void strip_quotes(char* str)
     str[i] = '\0';
 }
 
-#include <stdarg.h>
+#include <cstdarg>
 
 /*
  * outfile logger
