@@ -42,7 +42,7 @@ Note that this is **not JSON** but a similar data-format. Here's what the Abstra
     ```
     When a directory contains only a single entity, the braces aren't necessary:
     ```
-    "ihaveonefile": "onefile"
+    "i have one file": "one file"
     ```
 
 * The input file content can be like any of these:
@@ -67,19 +67,30 @@ Here's what the Abstract Syntax Tree looks like:
 
 ## Getting Started
 
-If you're on:
+### Dependencies
 
-### macOS
+The dependencies are:
+* `gcc`
+* `g++`
+* `flex`
+* `bison`
+* `tree`
+
+You don't have to manually install them. The `configure` script does it for you using your package manager. If you're on:
+
+#### macOS
 
 Make sure you have [Homebrew](https://brew.sh/) installed.
 
-### Windows
+#### Windows
 
 Install the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) or [Cygwin](https://cygwin.com/install.html) and make sure that you have [APT](https://salsa.debian.org/apt-team/apt) installed.
 
-### Linux
+#### Linux
 
 Make sure that you have [APT](https://salsa.debian.org/apt-team/apt) installed.
+
+### Building
 
 Clone the repo with:
 ```sh
