@@ -23,12 +23,12 @@ Make your project's file system from its description with **`fs-make (file syste
 Note that this is **not JSON** but a similar data-format. Here's what the Abstract Syntax Tree looks like.
 
 * Files are represented by the file name placed between a pair of double quotes (`"`):
-    ```javascript
+    ```
     "file-name"
     ```
 
 * Directories are represented by the directory name in double quotes (`"`) followed by a colon (`:`) and a comma-separated (`,`) set of file and directory representations between a pair of braces (`{}`):
-    ```javascript
+    ```
     "src": {
         "main.cpp",
         "CMakeLists.txt",
@@ -41,23 +41,23 @@ Note that this is **not JSON** but a similar data-format. Here's what the Abstra
     }
     ```
     When a directory contains only a single entity, the braces aren't necessary:
-    ```javascript
+    ```
     "ihaveonefile": "onefile"
     ```
 
 * The input file content can be like any of these:
   * a file
-    ```javascript
+    ```
     "just a file"
     ```
   * a directory
-    ```javascript
+    ```
     "lonely directory": {
         "stuff"
     }
     ```
   * an unnamed set of entities like this:
-    ```javascript
+    ```
     {}
     ```
     
