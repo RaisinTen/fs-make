@@ -14,7 +14,7 @@
 
 ---
 
-Make your project's file system from its description with **`fs-make (file system make)`**!
+Make your file system from its description with **`fs-make (file system make)`**!
 
 ![example](https://github.com/RaisinTen/fs-make/raw/master/fs-make-demo.png)
 
@@ -80,7 +80,7 @@ You don't have to manually install them. The `configure` script does it for you 
 
 #### macOS
 
-Make sure you have [Homebrew](https://brew.sh/) installed.
+Make sure that you have [Homebrew](https://brew.sh/) installed.
 
 #### Windows
 
@@ -105,20 +105,20 @@ $ make
 $ make install
 ```
 
-## Usage
+## Try it out
 
-1. Create a file (say, `description.json`) describing the structure of a directory (say, `project`).
-2. Use `fs-make` to make the script file (say, `script.sh`) that generates the file system like this:
+1. Create a file describing the structure of your file system.
+2. Use `fs-make` to make the script that generates the file system like this:
     ```sh
-    $ fs-make description.json script.sh
+    $ fs-make <description-file-name> <script-file-name>
     ```
 3. Run the script to generate the file system:
     ```sh
-    $ . ./script.sh
+    $ . <script-file-name>
     ```
-4. To verify the structure of the generated directory (in this case, `project` directory):
+4. To view the structure of the generated file system:
     ```sh
-    $ tree -a project
+    $ tree -a <directory-name>
     ```
 
 Here's an example:
