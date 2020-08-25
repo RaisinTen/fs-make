@@ -121,10 +121,6 @@ $ make install
     $ tree -a <directory-name>
     ```
 
-Here's an example:
-
-![example](https://github.com/RaisinTen/fs-make/raw/master/fs-make-demo.png)
-
 ## Code of Conduct
 
 Please refer to the [code of conduct](CODE_OF_CONDUCT.md) for the rules for interacting with this project.
