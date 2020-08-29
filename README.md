@@ -76,7 +76,7 @@ The dependencies are:
 * `bison`
 * `tree`
 
-You don't have to manually install them. The `configure` script does it for you using your package manager. If you're on:
+No manual installation is required. The `configure` script installs the dependencies using a package manager. If you are using:
 
 #### macOS
 
