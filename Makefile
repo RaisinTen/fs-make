@@ -45,7 +45,7 @@ OBJECTS := $(patsubst $(SRC)/%, %, $(OBJECTS))
 
 DEPS := $(OBJECTS:.o=.d)
 
-.PHONY := all clean install uninstall
+.PHONY : all clean install uninstall
 
 # colours
 
