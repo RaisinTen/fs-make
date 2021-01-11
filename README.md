@@ -14,7 +14,7 @@
 
 ---
 
-Make your file system from its description with **`fs-make (file system make)`**!
+Make your folder structure from its description with **`fs-make (folder structure make)`**!
 
 ![example](https://github.com/RaisinTen/fs-make/raw/master/fs-make-demo.png)
 
@@ -107,16 +107,16 @@ $ make install
 
 ## Try it out
 
-1. Create a file describing the structure of your file system.
-2. Use `fs-make` to make the script that generates the file system like this:
+1. Create a file describing the structure of your folder.
+2. Use `fs-make` to build the script:
     ```sh
     $ fs-make <description-file-name> <script-file-name>
     ```
-3. Run the script to generate the file system:
+3. Run the script to generate the folder structure:
     ```sh
     $ . <script-file-name>
     ```
-4. To view the structure of the generated file system:
+4. To view it:
     ```sh
     $ tree -a <directory-name>
     ```

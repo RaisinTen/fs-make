@@ -36,7 +36,7 @@ This project also uses [GNU Bison](www.gnu.org/software/bison/) which is used to
 
 ### Tree
 
-The [`tree`](https://en.wikipedia.org/wiki/Tree_(command)) command is a recursive directory listing command. After the file system is made, it helps in visualizing the structure of the file system.
+The [`tree`](https://en.wikipedia.org/wiki/Tree_(command)) command is a recursive directory listing command. After the folder structure is made, it helps in visualizing it.
 
 ### Build
 
@@ -52,7 +52,7 @@ The build directory is cleaned using `make clean`.
 
 ### Usage
 
-After making the input file describing the structure of the file system, compile it into the bash script for making it using:
+After making the input file describing the folder structure, compile it into the bash script for making it using:
 ```sh
 $ fs-make infile outfile
 ```
